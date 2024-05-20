@@ -3,7 +3,7 @@ import styled from './styled-components'
 export const ShowResultContainer = styled.div`
   width: 100%;
 `
-export const ResultImageContainer = styled.div`
+export const ResultImagesContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-around;
