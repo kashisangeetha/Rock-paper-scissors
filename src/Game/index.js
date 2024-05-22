@@ -117,51 +117,50 @@ class Game extends Component {
             onGetId={this.onGetButtonId}
           />
         ))}
-       <ItemsImageContainer>
-      ) 
-    }
+      </ItemsImageContainer>
+    )
+  }
 
-    render() {
-        
-        const {showResult, score, myChoice, apponentChoice} = this.state
-        return (
-            <MainContainer>
-                <ScoreContainer>
-                    <ItemsContainer>
-                        <Heading>
-                            ROCK
-                            <br />
-                            PAPER
-                            <br />
-                            SCISSORS
-                        </Heading>
-                    </ItemsContainer>
-                    <ScoreCardContainer>
-                    <ParagraphScore>Score</ParagraphScore>
-                    <ScoreSpan>{score}</ScoreSpan>
-                    </ScoreCardContainer>
-                </ScoreContainer>
-                {showResult ? this.onGetResult() : this.onGetImages()}
-                <PopUpContainer>
-                    <Popup modal trigger={<PopUpButton type="button">Rules</PopUpButton>}>
-                    {close => (
-                        <RulesImageContainer>
-                            <CloseLineContainer>
-                                <CloseLineButton type="button" onClick={() => close()}>
-                                    <RiCloseLine />
-                                </CloseLineButton>
-                            </CloseLineContainer>
-                            <RulesImage
-                                src="https://assets.ccbp.in/frontend/react-js/rock-paper-scissor/rules-image.png"
-                                alt="rules"
-                            />
-                        </RulesImageContainer>
-                    )}
-                    </Popup>
-                </PopUpContainer>
-            </MainContainer>
-        )
-    }
+  render() {
+    const {showResult, score, myChoice, apponentChoice} = this.state
+    return (
+      <MainContainer>
+        <ScoreContainer>
+          <ItemsContainer>
+            <Heading>
+              ROCK
+              <br />
+              PAPER
+              <br />
+              SCISSORS
+            </Heading>
+          </ItemsContainer>
+          <ScoreCardContainer>
+            <ParagraphScore>Score</ParagraphScore>
+            <ScoreSpan>{score}</ScoreSpan>
+          </ScoreCardContainer>
+        </ScoreContainer>
+        {showResult ? this.onGetResult() : this.onGetImages()}
+        <PopUpContainer>
+          <Popup modal trigger={<PopUpButton type="button">Rules</PopUpButton>}>
+            {close => (
+              <RulesImageContainer>
+                <CloseLineContainer>
+                  <CloseLineButton type="button" onClick={() => close()}>
+                    <RiCloseLine />
+                  </CloseLineButton>
+                </CloseLineContainer>
+                <RulesImageContainer
+                  src="https://assets.ccbp.in/frontend/react-js/rock-paper-scissor/rules-image.png"
+                  alt="rules"
+                />
+              </RulesImageContainer>
+            )}
+          </Popup>
+        </PopUpContainer>
+      </MainContainer>
+    )
+  }
 }
 
 export default Game
