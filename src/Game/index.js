@@ -34,7 +34,7 @@ class Game extends Component {
 
   onGetResult = () => {
     const {myChoice, apponentChoice, resultMessage} = this.state
-    const {id, image} = apponentChoice
+    const {id, imageUrl} = apponentChoice
     return (
       <GameResultView
         myChoice={myChoice}
@@ -45,13 +45,13 @@ class Game extends Component {
     )
   }
 
-  onGetButtonId = (id, image) => {
+  onGetButtonId = (id, imageUrl) => {
     const {choicesList} = this.props
     const number = Math.floor(Math.random() * choicesList.length)
     if (choicesList[number].id === 'ROCK' && id === 'SCISSORS') {
       this.setState(prevState => ({
         showResult: true,
-        myChoice: [id, image],
+        myChoice: [id, imageUrl],
         apponentChoice: choicesList[number],
         score: prevState.score - 1,
         resultMessage: 'YOU LOSE',
@@ -59,7 +59,7 @@ class Game extends Component {
     } else if (choicesList[number].id === 'ROCK' && id === 'PAPER') {
       this.setState(prevState => ({
         showResult: true,
-        myChoice: [id, image],
+        myChoice: [id, imageUrl],
         apponentChoice: choicesList[number],
         score: prevState.score + 1,
         resultMessage: 'YOU WON',
@@ -67,7 +67,7 @@ class Game extends Component {
     } else if (choicesList[number].id === 'SCISSORS' && id === 'ROCK') {
       this.setState(prevState => ({
         showResult: true,
-        myChoice: [id, image],
+        myChoice: [id, imageUrl],
         apponentChoice: choicesList[number],
         score: prevState.score + 1,
         resultMessage: 'YOU WON',
@@ -75,7 +75,7 @@ class Game extends Component {
     } else if (choicesList[number].id === 'SCISSORS' && id === 'PAPER') {
       this.setState(prevState => ({
         showResult: true,
-        myChoice: [id, image],
+        myChoice: [id, imageUrl],
         apponentChoice: choicesList[number],
         score: prevState.score - 1,
         resultMessage: 'YOU LOSE',
@@ -83,7 +83,7 @@ class Game extends Component {
     } else if (choicesList[number].id === 'PAPER' && id === 'ROCK') {
       this.setState(prevState => ({
         showResult: true,
-        myChoice: [id, image],
+        myChoice: [id, imageUrl],
         apponentChoice: choicesList[number],
         score: prevState.score - 1,
         resultMessage: 'YOU LOSE',
@@ -91,7 +91,7 @@ class Game extends Component {
     } else if (choicesList[number].id === 'PAPER' && id === 'SCISSORS') {
       this.setState(prevState => ({
         showResult: true,
-        myChoice: [id, image],
+        myChoice: [id, imageUrl],
         apponentChoice: choicesList[number],
         score: prevState.score + 1,
         resultMessage: 'YOU WON',
@@ -99,7 +99,7 @@ class Game extends Component {
     } else {
       this.setState({
         showResult: true,
-        myChoice: [id, image],
+        myChoice: [id, imageUrl],
         apponentChoice: choicesList[number],
         resultMessage: 'IT IS DRAW',
       })
